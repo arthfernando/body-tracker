@@ -2,16 +2,25 @@
     <div>
         <%= form.label :name %>
         <%= form.text_field :name %>
+        <% @user.errors.full_messages_for(:name).each do |msg| %>
+            <div><%= msg %></div>
+        <% end %>
     </div>
 
     <div>
         <%= form.label :email %>
         <%= form.text_field :email %>
+        <% @user.errors.full_messages_for(:email).each do |msg| %>
+            <div><%= msg %></div>
+        <% end %>
     </div>
 
     <div>
         <%= form.label :birthdate %>
         <%= form.date_field :birthdate %>
+        <% @user.errors.full_messages_for(:birthdate).each do |msg| %>
+            <div><%= msg %></div>
+        <% end %>
     </div>
 
     <div>
